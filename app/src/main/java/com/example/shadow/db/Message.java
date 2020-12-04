@@ -1,23 +1,43 @@
 package com.example.shadow.db;
 
-public class Message {
+import org.litepal.crud.LitePalSupport;
 
-    public static final int TYPE_RECEIVED = 0;
-    public static final int TYPE_SENT = 1;
+public class Message extends LitePalSupport {
 
     private String content;
-    private int type;
+    private int userID;
+    private long time;
+    private String date;
 
-    public Message(String content, int type) {
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setContent(String content) {
         this.content = content;
-        this.type = type;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
     }
 
     public String getContent() {
         return content;
     }
 
-    public int getType() {
-        return type;
-    }
 }
